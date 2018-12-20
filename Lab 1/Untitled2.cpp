@@ -1,3 +1,9 @@
+/*
+	The lineDDA alogorithm(used for drawing lines using Digital Differential Analyser) is used for the below program.
+	The image (car.jpg) is drawn.
+	The lineDDA algorithm has been optimised so that the special cases of horizontal, vertical and diagonal lines 
+	are treated differently, than an arbitrary line. Whenever these cases occur, they are solved differently.
+*/
 #include <stdio.h>
 #include <iostream>
 #include<math.h>
@@ -41,7 +47,7 @@ int lineDDA(int xa,int ya, int xb, int yb)
 	else
 	{
     	int dx = xb-xa, dy = yb-ya ,steps,k, x1, y1;
-    	float xincrement, yincrement ,x=xa , y=ya;
+    	float xincrement, yincrement ,x=xa , y=ya, slope = float(dy)/float(dx);
     	if(xa>xb)
 		{
 			x1 = xb;
@@ -58,7 +64,7 @@ int lineDDA(int xa,int ya, int xb, int yb)
 		{
 			y1 = ya;
 		}
-	    if(float(dy)/float(dx) == 1)//Diagonal line
+	    if(slope == 1)//Diagonal line
 	    {
 			int i;
 			for(i = 0; (x1 != xb && y1 != yb); i++)
@@ -66,7 +72,7 @@ int lineDDA(int xa,int ya, int xb, int yb)
 				putpixel(x1++, y1++, WHITE);
 			} 
 		}
-		else if(float(dy)/float(dx) == -1)//Diagonal line
+		else if(slope == -1)//Diagonal line
 		{
 		 	int i;
 			for(i = 0; (x1 != xb && y1 != yb); i++)
