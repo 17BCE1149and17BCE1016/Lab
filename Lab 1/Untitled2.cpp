@@ -3,6 +3,7 @@
 	The image (car.jpg) is drawn.
 	The lineDDA algorithm has been optimised so that the special cases of horizontal, vertical and diagonal lines 
 	are treated differently, than an arbitrary line. Whenever these cases occur, they are solved differently.
+	Please open this .cpp file from the .dev file in the same folder.
 */
 #include <stdio.h>
 #include <iostream>
