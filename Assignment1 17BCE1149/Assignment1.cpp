@@ -49,7 +49,7 @@ void LiangBarsky(int x1, int y1, int x2, int y2){
 			}
 		}
 	}
-	//cout<<tmin<<" "<<tmax<<endl;
+	
 	if(tmin < tmax){
 		cout<<ceil(x1 + tmin * dx)<<","<<ceil(y1 + tmin * dy)<<" to "<<floor(x1 + tmax * dx)<<","<<floor(y1 + tmax * dy)<<endl;
 		line(x1 + tmin * dx, y1 + tmin * dy, x1 + tmax * dx, y1 + tmax * dy);
